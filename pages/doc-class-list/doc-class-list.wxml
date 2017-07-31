@@ -1,0 +1,31 @@
+<view class="">
+  <view class="top-mian" wx:if="{{false}}">
+    <image mode="aspectFill" class="top-image" src="http://class.m.imooc.com/static/classwap/static/img/index/head.png"></image>
+  </view>
+  <view class="list">
+    <view class="item view-bg" wx:for="{{data.data}}" wx:key="{{item}}" bindtap="go_info" data-id="{{item.id}}">
+      <view class="item-main border-b"  hover-class="view-hover-class">
+        <view class="item-l">
+          <image mode="aspectFill" class="list-image" src="{{item.cover_url}}"></image>
+        </view>
+        <view class="item-r">
+          <text class="list-title">{{item.title}}</text>
+          <text class="list-desc">{{item.desc}}</text>
+          <view class="list-info">
+            <text wx:if="{{item.view_count > 0}}">{{item.view_count}}阅读</text>
+            <text wx:else></text>
+            <text wx:if="{{item.is_end == 0}}">更新中</text>
+            <text wx:if="{{item.is_end == 1}}">已完成</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
+    <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
+    <view class="no_data" wx:if="{{no_data}}">
+    <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+    <view class="no_data_text">抱歉，当前分类暂未相关文档！</view>
+    </view>
+  </view>
+</view>

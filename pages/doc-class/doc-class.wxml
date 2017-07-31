@@ -1,0 +1,21 @@
+<view class="">
+  <view class="search-view" wx:if="{{true}}" bindtap="go_search">
+    <text class="search-text">搜索文档</text>
+    <icon class="search-icon" type="search" size="15" />
+  </view>
+  <view class="class-main">
+    <view class="class-list view-bg" wx:for="{{data}}" wx:key="{{item}}">
+      <view class="class-title">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="class-son">
+        <view class="class-son-item" wx:for="{{item.son}}" wx:key="{{item}}" hover-class="view-hover-class" data-id="{{item.id}}" bindtap="go_class_list">
+          <image class="class-icon" src="{{item.icon_url}}"></image>
+          <view class="class-son-title">
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

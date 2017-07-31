@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/doc-info/doc-info",
+    "pages/doc-menu/doc-menu",
+    "pages/doc-page/doc-page",
+    "pages/doc-class/doc-class",
+    "pages/my-doc/my-doc",
+    "pages/doc-class-list/doc-class-list",
+    "pages/doc-search/doc-search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "云档",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f7f7"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#999999",
+    "selectedColor": "#f60",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/images/index_d.png",
+        "selectedIconPath": "/assets/images/index_c.png"
+      },
+      {
+        "pagePath": "pages/doc-class/doc-class",
+        "text": "分类",
+        "iconPath": "/assets/images/group_d.png",
+        "selectedIconPath": "/assets/images/group_c.png"
+      },
+      {
+        "pagePath": "pages/my-doc/my-doc",
+        "text": "档库",
+        "iconPath": "/assets/images/user_d.png",
+        "selectedIconPath": "/assets/images/user_c.png"
+      }
+    ]
+  }
+}

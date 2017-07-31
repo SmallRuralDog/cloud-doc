@@ -1,0 +1,26 @@
+<!--doc-info.wxml-->
+<view class="">
+  <view class="info-top">
+    <view class="top-main">
+      <image class="info-pic" src="{{data.cover_url}}"></image>
+      <view class="main-r">
+        <text class="info-title">{{data.title}}</text>
+        <text class="info-username" wx:if="{{false}}">作者：我吃西红柿</text>
+        <text class="info-class">类别：{{data.doc_class.title}}</text>
+        <text class="info-from">来源：{{data.source}}</text>
+      </view>
+    </view>
+    <view class="">
+      <view class="top-btn-group">
+        <button size="mini" class="btn" type="warn" bindtap="go_menu" data-id="{{data.id}}">阅读文档</button>
+        <button size="mini" class="btn" disabled="{{is_add}}" bindtap="add_my_doc" data-id="{{data.id}}">{{add_text}}</button>
+        <button size="mini" class="btn" open-type="share">分享文档</button>
+      </view>
+    </view>
+    <view class="top-info-desc">{{data.desc}}</view>
+    <view class="top-menu" bindtap="go_menu" data-id="{{data.id}}" wx:if="{{false}}">
+      <text class="menu-name border-b">目录</text>
+      <text class="menu-info"> ></text>
+    </view>
+  </view>
+</view>

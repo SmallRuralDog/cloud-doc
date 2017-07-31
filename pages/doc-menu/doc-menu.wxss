@@ -1,0 +1,44 @@
+page {
+  background: #fff;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  width: 100%;
+}
+
+.menu-title {
+  padding-left: 20rpx;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  color: #444;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.son {
+  font-size: 32rpx;
+}
+
+.son-title {
+  margin-left: 40rpx;
+}
+
+.son-title-2 {
+  margin-left: 80rpx;
+}
+
+.son-title-3 {
+  margin-left: 120rpx;
+}
+
+.son-title-4 {
+  margin-left: 160rpx;
+}

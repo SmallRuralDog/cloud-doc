@@ -1,0 +1,70 @@
+<view class="">
+  <view class="menu-list">
+    <view class="menu-item" wx:for="{{data}}" wx:key="{{item}}">
+      <view hover-class="view-hover-class">
+        <text decode="true" class="menu-title border-b-s" data-id="{{item.id}}" bindtap="go_page">{{item.title}}</text>
+      </view>
+      <template is="menu_son" data="{{...item}}" />
+    </view>
+  </view>
+</view>
+<template name="menu_son">
+  <view class="item-son">
+     <view class="" wx:for="{{children}}" wx:key="{{item}}">
+       <view class="" hover-class="view-hover-class">
+      <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son_2" data="{{...item}}"/>
+  </view>
+  </view>
+</template>
+<template name="menu_son_2">
+  <view class="item-son-2">
+    <view class="" wx:for="{{children}}" wx:key="{{item}}">
+       <view class="" hover-class="view-hover-class">
+          <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-2">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son_3" data="{{...item}}"/>
+    </view>
+  </view>
+</template>
+<template name="menu_son_3">
+  <view class="item-son-3">
+    <view class="" wx:for="{{children}}" wx:key="{{item}}">
+    <view class="" hover-class="view-hover-class">
+      <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-3">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son_4" data="{{...item}}"/>
+    </view>
+  </view>
+</template>
+<template name="menu_son_4">
+  <view class="item-son-4">
+    <view class=""  wx:for="{{children}}" wx:key="{{item}}">
+    <view class="" hover-class="view-hover-class">
+      <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-4">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son_5" data="{{...item}}"/>
+    </view>
+  </view>
+</template>
+<template name="menu_son_5">
+  <view class="item-son-5">
+    <view class=""  wx:for="{{children}}" wx:key="{{item}}">
+    <view class="" hover-class="view-hover-class">
+      <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-5">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son_6" data="{{...item}}"/>
+    </view>
+  </view>
+</template>
+<template name="menu_son_6">
+  <view class="item-son-6">
+    <view class="" wx:for="{{children}}" wx:key="{{item}}">
+    <view class="" hover-class="view-hover-class">
+      <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-6">{{item.menu_title}}</text>
+      </view>
+      <template is="menu_son" data="{{...item}}"/>
+    </view>
+  </view>
+</template>

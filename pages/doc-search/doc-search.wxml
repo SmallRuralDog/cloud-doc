@@ -1,0 +1,77 @@
+<view class="">
+  <view class="search-from">
+    <view class="from-input">
+      <icon class="search-icon" size="15" type="search" />
+      <input class="search-input" value="{{key}}" placeholder="输入文档关键字" type="text" confirm-type="search" focus="true" bindinput="search_tip" bindconfirm="search" />
+    </view>
+    <text class="cancel-btn color-danger" bindtap="cancel">取消</text>
+  </view>
+  <view class="" wx:if="{{search_tip.suggestions.length > 0 && !is_search}}" style="margin-bottom: 20rpx;">
+    <view class="my-list-item view-bg" wx:for="{{search_tip.suggestions}}" wx:key="{{item}}">
+      <view class="my-list-name border-b-s" bindtap="tag_search" data-name="{{item.suggestion}}">{{item.suggestion}}</view>
+    </view>
+  </view>
+  <view class="search-hot" wx:if="{{!is_search}}">
+    <view class="hot-main" wx:if="{{hot_tag.length > 0}}">
+      <view class="hot-title">
+        <text>热门搜索</text>
+      </view>
+      <view class="hot-list">
+        <view hover-class="view-hover-class-tg" class="hot-list-item" wx:for="{{hot_tag}}" wx:key="{{item}}" bindtap="tag_search" data-name="{{item.name}}"><text decode="true">{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="my-list" wx:if="{{my_search_arr.length > 0 && !is_search}}">
+    <view class="my-list-title">
+      <text>搜索记录</text>
+    </view>
+    <view wx:for="{{my_search_arr}}" wx:key="{{item}}">
+      <view class="my-list-item" >
+        <view class="my-list-name" bindtap="tag_search" data-name="{{item}}">{{item}}</view>
+        <view class="my-list-icon">
+          <icon class="my-list-icon-i" size="15" type="clear" bindtap="clear_my_search" data-name="{{item}}" />
+        </view>
+      </view>
+      <view class="border-b-s"></view>
+    </view>
+  </view>
+  <view class="search-data" wx:if="{{is_search}}">
+    <view class="view-bg data-info-main" wx:if="{{doc_list.length}}">
+      <view class="data-info text-12">相关文档</view>
+      <scroll-view scroll-x="true">
+        <view class="doc-list">
+          <view class="so-doc-item" wx:for="{{doc_list}}" wx:key="{{item}}" data-id="{{item.id}}" bindtap="go_info">
+            <image class="so-doc-img" mode="aspectFill" src="{{item.cover_url}}"></image>
+            <view class="sd-doc-title"><text class="sd-doc-title-text">{{item.title}}</text></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="">
+      <view class="data-info text-12">找到相关结果<text class="color-danger">{{data.total}}</text>条（用时{{data.searchtime}}秒）</view>
+      <view class="data-list">
+        <view class="so-list-item " wx:for="{{data.items}}" wx:key="{{item}}">
+          <view class="item-page" data-id="{{item.id}}" bindtap="go_page">
+            <rich-text wx:if="{{rich}}" class="item-title" nodes="{{item.title}}"></rich-text>
+            <text wx:else class="item-title">{{item.title}}</text>
+            <rich-text wx:if="{{rich}}" class="item-content" nodes="{{item.content}}"></rich-text>
+            <text wx:else class="item-content"><text class="color-danger">[您的微信版本过低，部分内容无法正常显示]</text>{{item.content}}</text>
+          </view>
+          <view class="item-doc" wx:if="{{item.title_1}}">
+            <image class="item-doc-avatar" src="{{item.cover}}" mode="aspectFill"></image>
+            <view class="item-doc-info">
+              <text class="doc-title">{{item.title_1}}</text>
+              <text class="doc-desc">{{item.desc}}</text>
+            </view>
+            <view class="doc-btn">
+              <view class="mini-btn" data-id="{{item.doc_id}}" bindtap="go_info">查看</view>
+            </view>
+          </view>
+          <view class="border-b"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="no_more" wx:if="{{more}}">正在加载下一页</view>
+  <view class="no_more" wx:if="{{no_more}}">没有更多了..</view>
+</view>

@@ -1,0 +1,30 @@
+<view>
+  <view class="" wx:if="{{true}}">
+    <view class="top-info" wx:if="{{!no_data}}">
+      <text>共{{data.length}}个文档</text>
+      <text bindtap="edit_show">编辑</text>
+    </view>
+    <view class="doc-list">
+      <view class="doc-list-item" wx:for="{{data}}" wx:key="item.id">
+        <view class="pic-view">
+          <image data-id="{{item.id}}" bindtap="go_info" class="doc-list-pic" src="{{item.cover_url}}"></image>
+          <view class="pic-x-view" wx:if="{{edit_show}}">
+            <button data-id="{{item.id}}" bindtap="del_my_doc" size="mini" plain="true" type="warn">删除</button>
+          </view>
+        </view>
+        <text data-id="{{item.id}}" bindtap="go_info" class="doc-list-title">{{item.title}}</text>
+      </view>
+    </view>
+    <view class="no_data" wx:if="{{no_data}}">
+      <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+      <view class="no_data_text">暂无文档哦，快去添加吧！</view>
+    </view>
+    <view class="kf-btn">
+      <view class="kf-mian">
+        <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+      </view>
+      <view class="kf-text">求档/建议</view>
+    </view>
+
+  </view>
+</view>

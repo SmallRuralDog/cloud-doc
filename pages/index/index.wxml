@@ -1,0 +1,38 @@
+<view class="">
+ <view class="search-view" wx:if="{{true}}" bindtap="go_search">
+    <text class="search-text">搜索文档</text>
+    <icon class="search-icon" type="search" size="15" />
+  </view>
+  <view class="list">
+    <view class="item view-bg" wx:for="{{data.data}}" wx:key="{{item}}" bindtap="go_info" data-id="{{item.id}}">
+      <view class="item-main border-b"  hover-class="view-hover-class">
+        <view class="item-l">
+          <image mode="aspectFill" class="list-image" src="{{item.cover_url}}"></image>
+        </view>
+        <view class="item-r">
+          <text class="list-title">{{item.title}}</text>
+          <text class="list-desc">{{item.desc}}</text>
+          <view class="list-info">
+            <text wx:if="{{item.view_count > 0}}">{{item.view_count}}阅读</text>
+            <text wx:else></text>
+            <text class="color-success" wx:if="{{item.is_end == 0}}">更新中</text>
+            <text class="color-danger" wx:if="{{item.is_end == 1}}">已完成</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
+    <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
+    <view class="no_data" wx:if="{{no_data}}">
+    <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+    <view class="no_data_text">暂无推荐文档！</view>
+    </view>
+  </view>
+  <view class="kf-btn">
+      <view class="kf-mian">
+        <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+      </view>
+      <view class="kf-text">求档/建议</view>
+    </view>
+</view>

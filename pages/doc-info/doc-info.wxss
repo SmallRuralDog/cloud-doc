@@ -1,0 +1,74 @@
+/* doc-info.wxss */
+page{
+  background: #ffffff;
+}
+.info-top {
+  padding: 20rpx 0 0 20rpx;
+}
+
+.top-main {
+  display: flex;
+}
+
+.info-pic {
+  width: 168rpx;
+  height: 224rpx;
+  border-radius: 4rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.main-r{
+  display: flex;
+  flex-direction: column;
+}
+.info-title{
+    font-size: 40rpx;
+    height: 120rpx;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    color: #33373d;
+}
+.info-username{
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+.info-class{
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+.info-from{
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+.top-btn-group{
+  padding: 40rpx 0 30rpx 0;
+}
+.btn{
+  margin-right: 20rpx;
+  width: 222rpx;
+}
+.top-info-desc{
+  font-size: 28rpx;
+  line-height: 1.6;
+  padding: 30rpx 20rpx 30rpx 0;
+  color: #666666;
+}
+.top-menu{
+  display: flex;
+  justify-content: space-between;
+  line-height: 90rpx;
+}
+.menu-name{
+  color: #666666;
+  font-size: 36rpx;
+  font-weight: bold;
+  
+}
+.menu-info{
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 20rpx;
+}

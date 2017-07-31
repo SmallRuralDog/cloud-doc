@@ -1,0 +1,12 @@
+<import src="/towxml/entry.wxml"/>
+<view class="">
+  <view class="page-main">
+    <view class="page-content markdown-body content">
+      <template is="entry" data="{{...article}}"/>
+    </view>
+  </view>
+  <view class="page-footer"></view>
+  <view wx:if="{{can_type}}" class="set-read-type" bindtap="change_read_type">
+    <image class="set-read-type-icon" src="../../assets/images/ic_yjms.png"></image>
+  </view>
+</view>

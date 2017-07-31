@@ -1,0 +1,68 @@
+/* my-doc.wxss */
+
+.doc-last {
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-pic {
+  width: 225rpx;
+  height: 300rpx;
+  border-radius: 8rpx;
+}
+
+.doc-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 12rpx 0 12rpx;
+}
+
+.doc-list-item {
+  margin: 0;
+  width: 242rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.pic-view {
+  width: 225rpx;
+  height: 300rpx;
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.doc-list-pic {
+  width: 225rpx;
+  height: 300rpx;
+  border-radius: 8rpx;
+}
+.pic-x-view{
+  width: 225rpx;
+  height: 300rpx;
+  border-radius: 8rpx;
+  position: absolute;
+  top:0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.doc-list-title {
+  font-size: 24rpx;
+  width: 225rpx;
+  text-align: left;
+  line-height: 1.5;
+  margin-top: 10rpx;
+}
+.top-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 24rpx;
+}
