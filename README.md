@@ -41,3 +41,8 @@
 ### 使用方法
 复制到微信小程序项目运行即可  目前接口是用我开发的程序提供的  基于laravel5.4开发
 后台程序过段时间开源出来
+
+### 第三方框架/类库
+
+-  [ArrayList](https://github.com/w3c-king/ArrayList)
+-  [towxml](https://github.com/sbfkcel/towxml)
