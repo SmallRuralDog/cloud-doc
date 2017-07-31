@@ -4,7 +4,6 @@
 一个免费在线文档的微信小程序
 
  ![](http://otbx7z2z0.bkt.clouddn.com/cloud-doc-logo.jpg_120x120.jpg)
- ![](http://otbx7z2z0.bkt.clouddn.com/gh_52a837af05b4_860.jpg_120x120.jpg)
 -------------
 
 > 有什么问题，欢迎骚扰
@@ -18,7 +17,7 @@
 
 或者扫码二维码
 
- ![](http://otbx7z2z0.bkt.clouddn.com/gh_52a837af05b4_860.jpg_120x120.jpg)
+ ![](http://otbx7z2z0.bkt.clouddn.com/gh_52a837af05b4_860.jpg!300w)
 
 下面是小程序的一下截图
 
