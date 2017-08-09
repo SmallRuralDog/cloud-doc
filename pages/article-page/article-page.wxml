@@ -1,0 +1,11 @@
+<import src="/towxml/entry.wxml" />
+<view class="">
+  <view class="page-main">
+    <view class="page-header">
+      <view class="page-title">{{title}}</view>
+    </view>
+    <view class="page-content markdown-body content">
+      <template is="entry" data="{{...article}}" />
+    </view>
+  </view>
+</view>

@@ -1,33 +1,42 @@
-//index.js
-//获取应用实例
-var app = getApp()
+// article.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    data: {},
-    page: 1,
-    more_data: "加载更多中..",
-    no_more: false,
-    no_data: false,
-    more: false,
-    ls_load: false,
-    swiper:[],
+    tag_id:0,
+    tag_name:'',
+    swiper: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    grid:[],
-    doc_class_list:[]
+    data: {},
+    page: 1,
+    class_id: 0,
+    more_data: "加载更多中..",
+    no_more: false,
+    no_data: false,
+    more: false,
+    ls_load: false
   },
-  //事件处理函数
-  go_info: function (event) {
-    let id = event.currentTarget.dataset.id;
-    console.log(id)
 
-    wx.navigateTo({
-      url: '../doc-info/doc-info?doc_id=' + id
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (option) {
+    let tag_id = option.tag_id
+    let tag_name = option.tag_name
+    this.setData({
+      tag_id: tag_id,
+      tag_name: tag_name
     })
-  },
-  onLoad: function () {
+    if(tag_id>0){
+      wx.setNavigationBarTitle({
+        title: tag_name,
+      })
+    }
     wx.showLoading({
       title: '加载中',
     })
@@ -38,21 +47,16 @@ Page({
       is_load: true
     })
     wx.request({
-      url: getApp().api.get_v3_index,
+      url: getApp().api.get_v3_article_index,
       data: {
+        tag_id: this.data.tag_id,
         page: this.data.page
       },
       success: (res) => {
-
-        this.setData({
-          swiper: res.data.swiper,
-          grid:res.data.grid,
-          doc_class_list:res.data.doc
-        })
-
-        /*if (res.data.current_page == 1) {
+        if (res.data.current_page == 1) {
           this.setData({
-            data: res.data
+            data: res.data,
+            swiper: res.data.swiper
           })
         } else {
           let o_data = this.data.data;
@@ -62,10 +66,11 @@ Page({
           }
           this.setData({
             data: o_data
+        
           })
         }
 
-        getApp().set_page_more(this, res)*/
+        getApp().set_page_more(this, res)
 
         wx.stopPullDownRefresh()
       }, complete: () => {
@@ -73,36 +78,29 @@ Page({
       }
     })
   },
-  go_search() {
-    wx.navigateTo({
-      url: '../doc-search/doc-search',
-    })
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
     this.setData({
       page: 1,
       more: false,
-      no_more: false,
-      no_data: false
+      no_more: false
     })
     this.get_data()
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-    /*if (this.data.more && !this.data.ls_load) {
+    if (this.data.more && !this.data.ls_load) {
       this.setData({
         page: this.data.page + 1,
         more_data: "正在加载更多.."
       })
       this.get_data()
-    }*/
-
+    }
+  },
+  go_page: function (event) {
+    let id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../article-page/article-page?id=' + id
+    })
   },
   /**
    * 用户点击右上角分享

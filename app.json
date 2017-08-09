@@ -7,7 +7,10 @@
     "pages/doc-class/doc-class",
     "pages/my-doc/my-doc",
     "pages/doc-class-list/doc-class-list",
-    "pages/doc-search/doc-search"
+    "pages/doc-search/doc-search",
+    "pages/article/article",
+    "pages/wenda/wenda",
+    "pages/article-page/article-page"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,25 +22,25 @@
   "tabBar": {
     "backgroundColor": "#ffffff",
     "color": "#999999",
-    "selectedColor": "#f60",
+    "selectedColor": "#fc3154",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "/assets/images/index_d.png",
-        "selectedIconPath": "/assets/images/index_c.png"
+        "iconPath": "/assets/images/homepage.png",
+        "selectedIconPath": "/assets/images/homepage_fill.png"
       },
       {
         "pagePath": "pages/doc-class/doc-class",
-        "text": "分类",
-        "iconPath": "/assets/images/group_d.png",
-        "selectedIconPath": "/assets/images/group_c.png"
+        "text": "课程",
+        "iconPath": "/assets/images/manage.png",
+        "selectedIconPath": "/assets/images/manage_fill.png"
       },
       {
         "pagePath": "pages/my-doc/my-doc",
-        "text": "档库",
-        "iconPath": "/assets/images/user_d.png",
-        "selectedIconPath": "/assets/images/user_c.png"
+        "text": "我的",
+        "iconPath": "/assets/images/mine.png",
+        "selectedIconPath": "/assets/images/mine_fill.png"
       }
     ]
   }

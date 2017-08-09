@@ -1,0 +1,43 @@
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
+
+page {
+  background: #fff;
+}
+
+.page-main {
+  background: #fff;
+}
+
+.h2w__p {
+  font-size: 32rpx;
+}
+
+.page-header {
+  background: #fff;
+  padding: 0 40rpx;
+}
+
+.page-title {
+  margin: 30rpx 0;
+  font-size: 60rpx;
+  font-weight: 700;
+  font-family: -apple-system,
+                 SF UI Display,
+                 Arial,
+                 PingFang SC,
+                 Hiragino Sans GB,
+                 Microsoft YaHei,
+                 WenQuanYi Micro Hei,
+                 sans-serif;
+  color: #2f2f2f;
+  line-height: 1.4;
+}

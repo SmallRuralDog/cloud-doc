@@ -1,0 +1,6 @@
+<view class="">
+  <view class="no_data" wx:if="{{true}}">
+    <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+    <view class="no_data_text">抱歉，暂未问答数据！</view>
+  </view>
+</view>

@@ -1,9 +1,119 @@
 /**index.wxss**/
 
-.search-view{
-  background: #ffffff;
+swiper {
+  height: 250rpx;
+}
+
+.slide-image {
+  width: 750rpx;
+  height: 250rpx;
+}
+
+.top-grid-menu {
+  background: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 30rpx 0rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-icon {
+  width: 70rpx;
+  height: 70rpx;
+  background-color: none;
+}
+
+.grid-title {
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+
+.class-doc {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.class-title {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.class-doc-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 12rpx 10rpx 12rpx;
+}
+
+.class-doc-list-item {
+  width: 339rpx;
+  margin: 0rpx 12rpx 30rpx 12rpx;
+  flex-shrink: 0;
+}
+
+.class-doc-list-img-box {
+  width: 339rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.class-doc-list-img-box-img {
+  width: 339rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+}
+
+.end-state {
+  position: absolute;
+  left: 5rpx;
+  bottom: 5rpx;
+  font-size: 16rpx;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5rpx 10rpx;
+  border-radius: 20rpx;
+  color: #fff;
+}
+
+.view-count {
+  position: absolute;
+  right: 5rpx;
+  bottom: 5rpx;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5rpx 10rpx;
+  border-radius: 20rpx;
+  font-size: 16rpx;
+}
+
+.view-count-text {
+  color: #fff;
+}
+
+.class-doc-list-info-box {
+  font-size: 26rpx;
+  line-height: 1.5;
+  margin-top: 10rpx;
+  color: #444;
+}
+
+.bottom-text {
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.search-view {
+  background: #fff;
   height: 60rpx;
-  margin:20rpx;
+  margin: 20rpx;
   border-radius: 10rpx;
   font-size: 24rpx;
   text-align: center;
@@ -13,10 +123,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.search-text{
+
+.search-text {
   line-height: 60rpx;
 }
-.search-icon{
+
+.search-icon {
   line-height: 60rpx;
   height: 30rpx;
 }
@@ -79,10 +191,10 @@
   justify-content: space-between;
 }
 
-.no_more{
+.no_more {
   line-height: 90rpx;
   text-align: center;
   background: #f7f7f7;
   font-size: 24rpx;
-  color: #999999;
+  color: #999;
 }

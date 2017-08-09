@@ -4,7 +4,7 @@
   </view>
   <view class="list">
     <view class="item view-bg" wx:for="{{data.data}}" wx:key="{{item}}" bindtap="go_info" data-id="{{item.id}}">
-      <view class="item-main border-b"  hover-class="view-hover-class">
+      <view class="item-main border-b" hover-class="view-hover-class">
         <view class="item-l">
           <image mode="aspectFill" class="list-image" src="{{item.cover_url}}"></image>
         </view>
@@ -24,8 +24,8 @@
     <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
     <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
     <view class="no_data" wx:if="{{no_data}}">
-    <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
-    <view class="no_data_text">抱歉，当前分类暂未相关文档！</view>
+      <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+      <view class="no_data_text">抱歉，当前分类暂未相关文档！</view>
     </view>
   </view>
 </view>

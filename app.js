@@ -64,5 +64,9 @@ App({
     get_v2_search: HOST + "/api/v2/search",
     get_v2_search_index: HOST + "/api/v2/search-index",
     get_v2_search_tip: HOST + "/api/v2/title-tip",
+
+    get_v3_index: HOST + "/api/v3/index",
+    get_v3_article_index: HOST + "/api/v3/article-index",
+    get_v3_article_page: HOST + "/api/v3/article-page",
   }
 })

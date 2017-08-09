@@ -1,0 +1,45 @@
+<view class="">
+  <view class="" wx:if="{{swiper.length>0}}">
+    <swiper indicator-dots="{{indicatorDots}}" circular="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#ffffff">
+      <block wx:for="{{swiper}}" wx:key="{{item}}">
+        <swiper-item>
+          <navigator url="{{item.page}}">
+            <image src="{{item.cover_url}}" class="slide-image" />
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="article-list">
+    <block wx:for="{{data.data}}" wx:key="{{item}}">
+      <view class="list-item">
+        <view class="item-mian" bindtap="go_page" data-id="{{item.id}}">
+          <view class="item-left">
+            <text decode="true" class="item-title">{{item.title}}</text>
+            <text wx:if="{{item.cover == null}}" decode="true" class="item-desc">{{item.desc}}</text>
+            <text wx:else decode="true" class="item-desc item-desc-a">{{item.desc}}</text>
+          </view>
+          <view class="item-right" wx:if="{{item.cover !== null}}">
+            <image mode="aspectFill" src="{{item.cover_url}}" class="item-cover"></image>
+          </view>
+        </view>
+        <view class="item-tag">
+          <block  wx:for="{{item.tags}}" wx:key="{{item}}">
+            <navigator wx:if="{{tag_id == 0}}" open-type="navigate" url="../article/article?tag_id={{item.id}}&tag_name={{item.name}}" class="tag">{{item.name}}</navigator>
+            <navigator wx:else open-type="redirect" url="../article/article?tag_id={{item.id}}&tag_name={{item.name}}" class="tag">{{item.name}}</navigator>
+          </block>
+        </view>
+
+      </view>
+      <view class="border-b"></view>
+    </block>
+    <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
+    <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
+    <view class="no_data" wx:if="{{no_data}}">
+      <image class="no_data_icon" src="../../assets/images/no_data.png"></image>
+      <view class="no_data_text">暂无数据！</view>
+    </view>
+
+  </view>
+</view>
