@@ -19,15 +19,11 @@
 
  ![](http://otbx7z2z0.bkt.clouddn.com/gh_52a837af05b4_860.jpg!300w)
 
-下面是小程序的一下截图
-
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1376.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1377.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1378.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1381.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1380.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1379.PNG!300w)
-![](http://otbx7z2z0.bkt.clouddn.com/cloud-docIMG_1341.PNG!300w)
+### 更新日志
+ - 2.1.4
+ -- 改版首页
+ -- 加入文章模块
+ -- 加入标签模块
 
 
 
