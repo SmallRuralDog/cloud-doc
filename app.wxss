@@ -1,4 +1,4 @@
-/**app.wxss**/
+ @import '/assets/style/cloud-icon.wxss'; 
 
 page {
   background: #f7f7f7;
@@ -33,7 +33,7 @@ text {
 .no_data {
   font-size: 24rpx;
   text-align: center;
-  padding-top: 300rpx;
+  padding: 300rpx 0;
   color: #666;
   background: #f7f7f7;
 }
@@ -55,13 +55,33 @@ text {
 .color-danger {
   color: #ea5a49;
 }
-
+.text-8 {
+  font-size: 16rpx;
+}
+.text-10 {
+  font-size: 20rpx;
+}
 .text-12 {
   font-size: 24rpx;
 }
 
 .text-14 {
   font-size: 28rpx;
+}
+.text-16 {
+  font-size: 32rpx;
+}
+.text-18 {
+  font-size: 36rpx;
+}
+.text-20 {
+  font-size: 40rpx;
+}
+.text-30 {
+  font-size: 60rpx;
+}
+.text-40 {
+  font-size: 80rpx;
 }
 
 .mini-btn {
@@ -130,4 +150,25 @@ text {
   font-size: 22rpx;
   line-height: 1.5;
   color: #666666;
+}
+.clear{
+  clear: both;
+}
+.iconfont.ask-btn {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.icon-btn{
+  display: flex;
+  align-items: center;
 }

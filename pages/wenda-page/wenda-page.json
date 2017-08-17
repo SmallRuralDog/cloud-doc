@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "问答",
+  "navigationBarTitleText": "问答详情",
   "backgroundColor": "#f7f7f7",
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": true

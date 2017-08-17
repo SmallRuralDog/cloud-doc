@@ -1,0 +1,147 @@
+@import '../wenda/wenda.wxss';
+
+.d-head {
+
+  padding: 30rpx;
+}
+
+.d-title {
+  font-size: 16pt;
+}
+
+.d-body {
+
+  display: flex;
+}
+
+.d-left {
+  width: 100rpx;
+  padding: 30rpx;
+}
+
+.d-right {
+  flex: 1;
+  padding: 30rpx 30rpx 30rpx 0;
+}
+
+.d-info {
+  text-align: center;
+  font-size: 14pt;
+  background: #f7f7f8;
+  padding: 10rpx 0;
+  border-radius: 6rpx;
+}
+
+.d-info .iconfont.mirror {
+  transform: rotate(180deg);
+}
+
+.d-info .iconfont.fav {
+  margin-top: 20rpx;
+}
+
+.d-describe {
+  font-size: 11pt;
+  margin-bottom: 30rpx;
+  line-height: 1.8;
+}
+
+.answer-line {
+  font-size: 16pt;
+  border-bottom: 1rpx #e5e7e9 solid;
+  padding: 40rpx 30rpx 30rpx;
+}
+
+.input-answer{
+  padding: 30rpx;
+}
+.input-title{
+  font-size: 16pt;
+  margin-bottom: 30rpx;
+}
+.input-area{
+  border: 1rpx #e5e7e9 solid;
+  border-radius: 6rpx;
+  width: 95%;
+  font-size: 11pt;
+  padding:2.5%;
+  position: relative;
+}
+
+.choose{
+  color:#009A61;
+  font-size: 9pt;
+  text-align: center;
+}
+.choose .iconfont{
+  font-size: 20pt;
+  margin-top: 30rpx;
+}
+
+.pic3{
+  width: 177rpx;
+  height: 177rpx;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+.pic2 {
+  width: 274rpx;
+  height: 274rpx;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+
+.pic1 {
+  width: 370rpx;
+  height: 370rpx;
+}
+.no_data {
+  padding: 150rpx 0;
+}
+
+
+.item-doc {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx;
+  background: #f7f7f7;
+}
+
+.item-doc-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.item-doc-info {
+  width: 500rpx;
+  padding: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doc-title {
+  font-size: 28rpx;
+  color: #333;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.doc-desc {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.doc-btn {
+  width: 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,164 @@
+ @import '/assets/style/iconfont.wxss'; 
+  @import '../my-doc/my-doc.wxss'; 
+page{
+  background: #ffffff;
+}
+/*头部*/
+
+.user-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx 10rpx;
+  border-bottom: 1rpx #f0f0f0 solid;
+}
+
+.uerinfo {
+  flex: 1;
+  font-size: 11pt;
+}
+
+.avatar {
+  width: 180rpx;
+}
+
+.avatar-img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+
+.uerinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  font-family: microsoft yahei;
+}
+
+.no-login{
+  padding: 100rpx 160rpx;
+}
+
+/*数据栏*/
+
+.userdata {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center;  
+  padding: 0 30rpx;*/
+  padding-bottom: 30rpx;
+}
+
+.dataone {
+  width: 140rpx;
+  font-size: 9pt;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-num {
+  font-weight: bold;
+  font-size: 14pt;
+  font-family: microsoft yahei;
+}
+
+.edit {
+  flex: 1;
+  text-align: right;
+  font-size: 11pt;
+  color: #fc3154;
+}
+
+/*功能格子*/
+
+.func-grid {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 30rpx #f7f7f7 solid;
+}
+
+.func-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 9pt;
+  padding: 40rpx 0;
+}
+
+.func-item .iconfont {
+  font-size: 18pt;
+  margin-bottom: 20rpx;
+}
+
+/* 扫一扫 */
+.scan{
+  padding: 30rpx;
+  border-bottom: 30rpx #f0f0f0 solid;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  
+}
+.scan .iconfont{
+  font-size: 18pt;
+  margin-right: 40rpx;
+}
+
+/* tab */
+
+.user-tab {
+  display: flex;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-item.active {
+  border-bottom: 2px #fc3154 solid;
+  color: #fc3154;
+}
+
+/* 空白数据 */
+
+.empty {
+  text-align: center;
+  padding: 160rpx;
+}
+
+.start-btn {
+  margin-top: 70rpx;
+}
+
+/*功能格子-3格*/
+
+/* .func-grid3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.func-item3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 9pt;
+  padding: 40rpx;
+  border-bottom: 1rpx #f0f0f0 solid;
+  border-right: 1rpx #f0f0f0 solid;
+}
+
+.func-item3 .iconfont {
+  font-size: 18pt;
+  margin-bottom: 20rpx;
+} */

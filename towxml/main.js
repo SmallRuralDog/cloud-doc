@@ -134,7 +134,11 @@ class towxml{
 							return '<image '+newAttrs+'></image>'
 						};
             if (labelName === 'pre') {
-              let pre = '<view v_type="pre" decode="true" ' + newAttrs + '>' + _ts.needClose(labelName);
+              let pre = '<scroll-view scroll-x="true" v_type="pre" decode="true" ' + newAttrs + '>' + _ts.needClose(labelName);
+              return pre;
+            }
+            if (labelName === 'table') {
+              let pre = '<scroll-view scroll-x="true" v_type="table" ' + newAttrs + '>' + _ts.needClose(labelName);
               return pre;
             }
             if (labelName === 'code'){
@@ -210,7 +214,10 @@ class towxml{
 				temp = 'navigator';
 			break;
       case 'pre':
-        temp = 'view';
+        temp = 'scroll-view';
+        break;
+      case 'table':
+        temp = 'scroll-view';
         break;
 			case 'span':
 			case 'b':

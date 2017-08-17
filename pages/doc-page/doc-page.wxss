@@ -23,7 +23,7 @@
   position: fixed;
   z-index: 99;
   bottom: 20rpx;
-  right: 20rpx;
+  right: 120rpx;
   width: 40rpx;
   height: 40rpx;
   padding: 20rpx;
@@ -33,4 +33,10 @@
 .set-read-type-icon{
   width: 40rpx;
   height: 40rpx;
+}
+.iconfont.ask-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.5);
+  color: #999999;
 }

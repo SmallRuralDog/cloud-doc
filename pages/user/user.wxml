@@ -1,0 +1,129 @@
+<block wx:if="{{page_show}}">
+  <view class="user-head" wx:if="{{is_login}}">
+    <view class="uerinfo">
+      <text class="nickname">{{user.nick_name}}</text>
+      <!-- <text>2017加入</text> -->
+      <view class="userdata">
+        <view class="dataone">
+          <text class="user-num">{{user_data.follow}}</text>
+          <text>关注</text>
+        </view>
+        <view class="dataone">
+          <text class="user-num">{{user_data.fans}}</text>
+          <text>粉丝</text>
+        </view>
+        <!-- <view class="edit">
+        <text>编辑个人资料</text>
+      </view> -->
+      </view>
+
+    </view>
+    <view class="avatar">
+      <image src="{{user.avatar_url}}" class="avatar-img"></image>
+    </view>
+  </view>
+  <view class="no-login" wx:else>
+    <button class="login-btn" type="warn" open-type="getUserInfo" bindgetuserinfo="getuserinfo">立即登录</button>
+  </view>
+  <!-- <view class="userdata">
+  <view class="dataone">
+    <text class="user-num">1</text>
+    <text>关注</text>
+  </view>
+  <view class="dataone">
+    <text class="user-num">1</text>
+    <text>关注</text>
+  </view>
+  <view class="edit">
+    <text>编辑个人资料</text>
+  </view>
+</view> -->
+
+  <view class="func-grid">
+    <view class="func-item" bindtap="scan_code">
+      <view class="iconfont icon-saoma"></view>
+      <text>{{user_data.scan_code_title}}</text>
+    </view>
+    <!--view class="func-item">
+    <view class="iconfont icon-dingdan"></view>
+    <text>订单</text>
+  </view>
+  <view class="func-item">
+    <view class="iconfont icon-youhui"></view>
+    <text>优惠</text>
+  </view>
+  <view class="func-item">
+    <view class="iconfont icon-app-tongji"></view>
+    <text>统计</text>
+  </view-->
+  </view>
+
+  <!-- <view class="scan">
+  <view class="iconfont icon-saoma"></view>
+  <text>扫一扫</text>
+</view> -->
+
+  <view class="user-tab">
+    <view class="tab-item active">
+      <text>档库</text>
+    </view>
+    <view class="tab-item">
+      <text>收藏<text class="text-8">（即将开放）</text></text>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{user_data.doc.length<=0}}">
+    <view class="text-12"><text wx:if="{{is_login}}">没添加过任何文档</text><text wx:else>登录后查看我的文档</text></view>
+    <navigator url="/pages/index/index" open-type="switchTab">
+      <button class="start-btn" type="default" size="mini" wx:if="{{is_login}}">开始学习</button>
+    </navigator>
+  </view>
+  <view class="" wx:else>
+
+    <view class="doc-list">
+      <view class="doc-list-item" wx:for="{{user_data.doc}}" wx:key="item">
+        <view class="pic-view">
+          <navigator url="/pages/doc-info/doc-info?doc_id={{item.id}}">
+            <image data-id="{{item.id}}" class="doc-list-pic" src="{{item.cover_url}}"></image>
+          </navigator>
+          <view class="pic-x-view" wx:if="{{edit_show}}">
+            <button data-id="{{item.id}}" bindtap="del_my_doc" size="mini" plain="true" type="warn">删除</button>
+          </view>
+        </view>
+        <text data-id="{{item.id}}" class="doc-list-title">{{item.title}}</text>
+      </view>
+    </view>
+    <view class="top-info">
+      <text>共{{user_data.doc.length}}个文档</text>
+      <text bindtap="edit_show">编辑</text>
+    </view>
+  </view>
+  <!-- <view class="func-grid3">
+  <view class="func-item3">
+    <view class="iconfont icon-shoucang"></view>
+    <text>我的地址</text>
+  </view>
+  <view class="func-item3">
+    <view class="iconfont icon-dingdan"></view>
+    <text>粉丝专区</text>
+  </view>
+  <view class="func-item3">
+    <view class="iconfont icon-youhui"></view>
+    <text>分享有礼</text>
+  </view>
+</view>
+<view class="func-grid3">
+  <view class="func-item3">
+    <view class="iconfont icon-shoucang"></view>
+    <text>商家合作</text>
+  </view>
+  <view class="func-item3">
+    <view class="iconfont icon-dingdan"></view>
+    <text>疑问帮助</text>
+  </view>
+  <view class="func-item3">
+    <view class="iconfont icon-youhui"></view>
+    <text>设置</text>
+  </view>
+</view> -->
+</block>

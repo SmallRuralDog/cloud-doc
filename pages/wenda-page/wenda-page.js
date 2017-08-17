@@ -1,14 +1,9 @@
-
-let ArrayList = require("../../utils/arrayList.js");
 Page({
   data: {
-    doc_id: 0,
-    doc: {},
-    my_doc: [],
-    is_add: true,
-    add_text: "已加入",
+    id: 0,
     show_page: false,
     data: {},
+    wenda: [],
     page: 1,
     class_id: 0,
     more_data: "加载更多中..",
@@ -18,17 +13,9 @@ Page({
     ls_load: false
   },
   onLoad: function (option) {
-
-    let old_my_doc = wx.getStorageSync("old_my_doc");
-    if (old_my_doc == '') {
-      old_my_doc = { arr: [] };
-    }
-    let list = new ArrayList(old_my_doc.arr);
-    list.setType("number")
-    let id = option.doc_id
+    let id = option.id
     this.setData({
-      doc_id: id,
-      my_doc: list
+      id: id
     })
     wx.showLoading({
       title: '加载中',
@@ -36,30 +23,24 @@ Page({
     this.get_data()
   },
   get_data() {
+    this.setData({
+      is_load: true
+    })
     wx.request({
-      url: getApp().api.get_v3_2_doc_info,
+      url: getApp().api.v3_wenda_page,
       header: {
         'Authorization': 'Bearer ' + getApp().user.ckLogin()
       },
       data: {
-        doc_id: this.data.doc_id,
+        id: this.data.id,
         page: this.data.page
       },
-      success: (res) => {
+      success: res => {
         if (res.data.current_page == 1) {
           this.setData({
-            doc: res.data.doc,
             data: res.data,
+            wenda: res.data.wenda,
             show_page: true
-          })
-          if (!res.data.doc.is_follow) {
-            this.setData({
-              is_add: false,
-              add_text: "加入档库"
-            })
-          }
-          wx.setNavigationBarTitle({
-            title: res.data.doc.title
           })
         } else {
           let o_data = this.data.data;
@@ -72,49 +53,9 @@ Page({
         }
         getApp().set_page_more(this, res)
         wx.stopPullDownRefresh()
-      }, complete: () => {
+      }, complete: res => {
         wx.hideLoading()
       }
-    })
-  },
-  go_menu: function (event) {
-    let doc_id = event.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../doc-menu/doc-menu?doc_id=' + doc_id
-    })
-  },
-  add_my_doc: function (event) {
-    let doc_id = event.currentTarget.dataset.id;
-    getApp().user.isLogin(token => {
-      wx.showNavigationBarLoading()
-      wx.request({
-        url: getApp().api.v3_user_follow,
-        method: 'post',
-        header: {
-          'Authorization': 'Bearer ' + token
-        },
-        data: {
-          key: doc_id,
-          type: 'doc'
-        }, success: res => {
-          if (res.data.status_code == 200) {
-            this.setData({
-              is_add: true,
-              add_text: "已加入"
-            })
-            wx.showToast({
-              title: '加入成功',
-            })
-            try {
-              getApp().pages.get('pages/user/user').get_data();
-            } catch (e) {
-
-            }
-          }
-        }, complete: res => {
-          wx.hideNavigationBarLoading()
-        }
-      })
     })
   },
   onPullDownRefresh: function () {
@@ -135,15 +76,24 @@ Page({
     }
   },
   onShareAppMessage: function () {
-    return {
-      title: "云档-免费在线文档"
-    }
-  },
-  doc_like(event) {
 
+  },
+  show_image(event) {
+    let item = event.currentTarget.dataset.src;
+    let pics = []
+    this.data.wenda.pics_arr.map(item => {
+      pics.push(item.path)
+    })
+    wx.previewImage({
+      current: item,
+      urls: pics
+    })
+  },
+  wenda_like(event) {
+   
     let id = event.currentTarget.dataset.id;
     let ty = event.currentTarget.dataset.type;
-    if (this.data.doc.is_like && ty == 'doc') {
+    if (this.data.wenda.is_like && ty == 'wenda') {
       wx.showToast({
         title: '已经赞过了',
       })
@@ -164,20 +114,20 @@ Page({
               wx.showToast({
                 title: '赞+1',
               })
-              if (ty == 'doc') {
-                let doc = this.data.doc
-                doc.is_like = true
-                doc.like_count = doc.like_count + 1
+              if (ty == 'wenda') {
+                let wenda = this.data.wenda
+                wenda.is_like = true
+                wenda.like_count = wenda.like_count + 1
                 this.setData({
-                  doc: doc
+                  wenda: wenda
                 })
               }
-            } else {
+            }else{
               wx.showToast({
                 title: '已经赞过了',
               })
             }
-          } else {
+          }else{
             wx.showToast({
               title: '操作失败',
             })

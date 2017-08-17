@@ -1,0 +1,11 @@
+<view class="">
+    <form bindsubmit="bindFormSubmit">
+      <view class="text-14 aui-bg-white aui-border-b">
+        <textarea maxlength="-1" auto-height="{{true}}" name="textarea" bindinput="reply_input" style="width:auto; padding:20rpx; min-height:400rpx;" placeholder="优质回答将会被优先展示" auto-focus />
+      </view>
+      <view style="width:auto; padding:20rpx;">
+        <button type="warn" disabled="{{disabled}}" form-type="submit"> 提交 </button>
+      </view>
+    </form>
+</view>
+

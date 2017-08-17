@@ -161,5 +161,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  previewImage: function (event) {
+    let src = event.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    })
   }
 })

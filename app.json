@@ -10,7 +10,11 @@
     "pages/doc-search/doc-search",
     "pages/article/article",
     "pages/wenda/wenda",
-    "pages/article-page/article-page"
+    "pages/article-page/article-page",
+    "pages/user/user",
+    "pages/wenda-page/wenda-page",
+    "pages/wenda-post/wenda-post",
+    "pages/wenda-reply-post/wenda-reply-post"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,13 +35,20 @@
         "selectedIconPath": "/assets/images/homepage_fill.png"
       },
       {
+        "pagePath": "pages/wenda/wenda",
+        "text": "问答",
+        "iconPath": "/assets/images/feedback.png",
+        "selectedIconPath": "/assets/images/feedback_fill.png"
+      },
+
+      {
         "pagePath": "pages/doc-class/doc-class",
         "text": "课程",
         "iconPath": "/assets/images/manage.png",
         "selectedIconPath": "/assets/images/manage_fill.png"
       },
       {
-        "pagePath": "pages/my-doc/my-doc",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "/assets/images/mine.png",
         "selectedIconPath": "/assets/images/mine_fill.png"

@@ -1,0 +1,96 @@
+<block wx:if="{{show_page}}">
+  <view class="view-bg">
+    <view class="d-head">
+      <view class="d-title">{{wenda.title}}</view>
+      <view class="q-tags" wx:if="{{false}}">
+        <view class="q-tag">python</view>
+        <view class="q-tag">python爬虫</view>
+        <view class="clear"></view>
+      </view>
+    </view>
+    <view class="border-b"></view>
+    <view class="d-body">
+      <view class="d-left">
+        <view class="d-info" data-type="wenda" data-id="{{wenda.id}}" catchtap="wenda_like">
+          <text class="q-num text-12">{{wenda.like_count}}</text>
+          <view class="c-iconfont text-20 icon-aui-icon-laud"></view>
+        </view>
+      </view>
+      <view class="border-b"></view>
+      <view class="d-right">
+        <view class="q-info">
+          <view class="q-man">
+            <image src="{{wenda.user.avatar}}" class="q-avatar"></image>
+            <view class="q-asker">
+              <text class="name">{{wenda.user.name}}</text>
+              <text class="title">{{wenda.user.title}}</text>
+            </view>
+          </view>
+          <text class="q-time">{{wenda.created}}提问</text>
+        </view>
+        <text class="d-describe">{{wenda.desc}}</text>
+        <view class="pic-grid" wx:if="{{wenda.pics_arr.length>0}}">
+          <block wx:if="{{wenda.pics_type==3}}">
+            <image src="{{item.thumb}}" data-src="{{item.path}}" catchtap="show_image" wx:for="{{wenda.pics_arr}}" wx:key="{{item}}" class="pic3"></image>
+          </block>
+          <block wx:if="{{wenda.pics_type==2}}">
+            <image src="{{item.thumb}}" data-src="{{item.path}}" catchtap="show_image" wx:for="{{wenda.pics_arr}}" wx:key="{{item}}" class="pic2"></image>
+          </block>
+          <block wx:if="{{wenda.pics_type==1}}">
+            <image mode="widthFix" data-src="{{item.path}}" catchtap="show_image" src="{{item.thumb}}" wx:for="{{wenda.pics_arr}}" wx:key="{{item}}" class="pic1"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="item-doc" wx:if="{{wenda.source_info.title}}">
+      <image class="item-doc-avatar" src="{{wenda.source_info.h_cover_url}}" mode="aspectFill"></image>
+      <view class="item-doc-info">
+        <text class="doc-title">{{wenda.source_info.title}}</text>
+        <text class="doc-desc">{{wenda.source_info.desc}}</text>
+      </view>
+      <view class="doc-btn">
+        <navigator url="../doc-info/doc-info?doc_id={{wenda.source_info.id}}" class="mini-btn">查看</navigator>
+      </view>
+    </view>
+    <view class="answer-line">
+      {{data.total}}个回答
+    </view>
+
+    <block wx:for="{{data.data}}" wx:key="{{item}}">
+      <view class="d-body">
+        <view class="d-left">
+          <view class="d-info" data-type="wenda-page" data-id="{{item.id}}" catchtap="wenda_like">
+            <text class="q-num text-12">{{item.like_count}}</text>
+            <view class="c-iconfont text-20 icon-aui-icon-laud"></view>
+          </view>
+          <view class="choose" wx:if="{{item.is_accept}}">
+            <view class="iconfont icon-gouxuan"></view>
+            <text>已采纳</text>
+          </view>
+        </view>
+        <view class="d-right">
+          <view class="q-info">
+            <view class="q-man">
+              <image src="{{item.user.avatar}}" class="q-avatar"></image>
+              <view class="q-asker">
+                <text class="name">{{item.user.name}}</text>
+                <text class="title">{{item.user.title}}</text>
+              </view>
+            </view>
+            <text class="q-time">{{item.created}}回答</text>
+          </view>
+          <view class="d-describe"><text decode="true">{{item.content}}</text></view>
+
+        </view>
+      </view>
+      <view class="border-b"></view>
+    </block>
+    <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
+    <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
+    <view class="no_data" wx:if="{{no_data}}">
+      <view class="no_data_text">暂无回答，快抢第一个！</view>
+    </view>
+
+    <navigator url="../wenda-reply-post/wenda-reply-post?id={{wenda.id}}" class="iconfont ask-btn">回答</navigator>
+  </view>
+</block>

@@ -1,1 +1,183 @@
-/* wenda.wxss */
+@import '/assets/style/iconfont.wxss';
+
+.q-item {
+  display: flex;
+  background: #fff;
+}
+
+.q-left {
+  /* background: #f7f7f8;
+  width: 140rpx;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+  color: #888;
+  font-size: 11pt;
+  line-height: 1; */
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+
+.q-status {
+  background: #e64340;
+  text-align: center;
+  color: #fff;
+  width: 80rpx;
+  padding: 10rpx 0;
+  font-size: 18rpx;
+}
+
+.q-status.solved {
+  background: #808b87;
+}
+
+.answer-num {
+  font-size: 12pt;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.q-right {
+  padding: 30rpx 30rpx 10rpx 0;
+  flex: 1;
+}
+
+/* .q-lefttop, .q-leftbottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.q-lefttop .iconfont, .q-leftbottom .iconfont {
+  margin-left: 10rpx;
+} */
+
+.q-tags {
+  padding-top: 20rpx;
+  clear: both;
+}
+
+.q-tag {
+  font-size: 9pt;
+  color: #4f83a8;
+  background: #e1ecf4;
+  float: left;
+  margin-right: 10rpx;
+  padding: 8rpx 8rpx;
+}
+
+.q-title {
+  font-size: 30rpx;
+  color: #444;
+  line-height: 1.5;
+}
+
+.q-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  /* padding-top: 20rpx; 
+  border: 1px red solid;*/
+  margin-bottom: 20rpx;
+}
+
+.q-avatar {
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.q-man {
+  display: flex;
+  align-items: center;
+}
+
+.q-time {
+  color: #aaa;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.q-asker {
+  height: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.q-asker .name{
+  font-size: 26rpx;
+  color: #111111;
+}
+.q-asker .title{
+  font-size: 20rpx;
+}
+
+.clear {
+  clear: both;
+}
+
+.from-line {
+  display: flex;
+  justify-content: space-between;
+  clear: both;
+  padding-top: 30rpx;
+}
+
+.from-left,.from-left text {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.from-right {
+  width: 200rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.from-right-item {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.from-right-item .iconfont {
+  font-size: 24rpx;
+  color: #ccc;
+  margin-right: 5rpx;
+}
+
+.from-right-item text {
+  color: #ccc;
+}
+
+.pic-grid {
+  clear: both;
+  padding-top: 30rpx;
+}
+
+.pic-grid-img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.pic3 {
+  width: 187rpx;
+  height: 187rpx;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+
+.pic2 {
+  width: 284rpx;
+  height: 284rpx;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+
+.pic1 {
+  width: 380rpx;
+  height: 380rpx;
+}
+
+

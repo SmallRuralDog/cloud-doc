@@ -29,13 +29,16 @@
     <view class="class-title">{{item.title}}</view>
     <view class="class-doc-list">
       <block wx:for="{{item.doc}}" wx:key="{{item}}">
-        <view class="class-doc-list-item"  bindtap="go_info" data-id="{{item.id}}">
+        <view class="class-doc-list-item" data-id="{{item.id}}">
           <view class="class-doc-list-img-box">
-            <image mode="aspectFill" class="class-doc-list-img-box-img" src="{{item.h_cover_url}}"></image>
+            <navigator url="/pages/doc-info/doc-info?doc_id={{item.id}}">
+              <image mode="aspectFill" class="class-doc-list-img-box-img" src="{{item.h_cover_url}}"></image>
+            
             <text class="end-state" wx:if="{{false}}">已完成</text>
             <view class="view-count">
               <text class="view-count-text">{{item.view_count}}阅读</text>
             </view>
+            </navigator>
           </view>
           <view class="class-doc-list-info-box">{{item.title}}</view>
         </view>
@@ -45,7 +48,7 @@
 
   <view class="bottom-text" wx:if="{{doc_class_list.length>0}}">到底了，去看看课程吧！</view>
 
-  
+
 
 
   <!--view class="list">

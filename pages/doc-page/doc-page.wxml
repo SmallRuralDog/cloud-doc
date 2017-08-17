@@ -9,4 +9,5 @@
   <view wx:if="{{can_type}}" class="set-read-type" bindtap="change_read_type">
     <image class="set-read-type-icon" src="../../assets/images/ic_yjms.png"></image>
   </view>
+  <navigator url="../wenda-post/wenda-post?source=doc-page&source_id={{page_id}}" class="iconfont ask-btn">提问</navigator>
 </view>

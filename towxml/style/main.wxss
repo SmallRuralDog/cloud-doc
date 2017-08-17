@@ -56,11 +56,10 @@
 
 /**表格**/
 .h2w__table {
-    width:100%;
+    width:750rpx;
     border-collapse:collapse;
     border-spacing:0;
-    display:table;
-    margin-bottom:40rpx;
+    margin:0 -40rpx 40rpx -40rpx;
 }
 .h2w__table .h2w__tr:nth-child(2n){
     background-color:red;
@@ -73,6 +72,7 @@
 }
 .h2w__thead {
     display:table-header-group;
+    min-width: 750rpx;
 }
 .h2w__tbody {
     display:table-row-group;
@@ -82,14 +82,16 @@
 }
 .h2w__tr {
     display:table-row;
+    min-width: 750rpx;
 }
 .h2w__th,
 .h2w__td {
     padding:8rpx 16rpx;
-    font-size:28rpx;
+    font-size:24rpx;
     border-width:1rpx;
     border-style:solid;
     display:table-cell;
+    white-space:nowrap; 
 }
 .h2w__th {
     font-weight:bold;
@@ -97,20 +99,22 @@
 
 /**代码块**/
 .h2w__pre {
-    /*white-space:nowrap;*/
     padding:20rpx;
     font-size:24rpx;
     word-break:normal;
-    border-width:1rpx;
-    border-style:solid;
-    margin-bottom:40rpx;
     white-space:pre;
-    overflow-x:auto;
+    width: 710rpx;
+    margin:0 -40rpx 40rpx -40rpx;
+}
+.h2w__blockquote .h2w__pre{
+  width: 720rpx;
+  margin:0 -120rpx 40rpx -80rpx;
 }
 .h2w__pre .h2w__code {
     padding:0;
     border:0;
-    font-size:80%;
+    font-size:22rpx;
+    display: inline-block;
 }
 .h2w__pre,
 .h2w__code {

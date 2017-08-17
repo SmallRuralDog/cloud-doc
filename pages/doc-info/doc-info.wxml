@@ -1,26 +1,121 @@
-<!--doc-info.wxml-->
-<view class="">
-  <view class="info-top">
-    <view class="top-main">
-      <image class="info-pic" src="{{data.cover_url}}"></image>
-      <view class="main-r">
-        <text class="info-title">{{data.title}}</text>
-        <text class="info-username" wx:if="{{false}}">作者：我吃西红柿</text>
-        <text class="info-class">类别：{{data.doc_class.title}}</text>
-        <text class="info-from">来源：{{data.source}}</text>
+<block wx:if="{{show_page}}">
+  <view class="">
+    <view class="book-detail-x">
+      <image src="{{doc.cover_url}}" class="book-cover-blur"></image>
+      <view class="info-top">
+        <view class="top-main">
+          <image class="info-pic" src="{{doc.cover_url}}"></image>
+          <view class="main-r">
+            <text class="info-title">{{doc.title}}</text>
+            <text class="info-username">作者：{{doc.user.nick_name}}</text>
+            <text class="info-class">类别：{{doc.doc_class.title}}</text>
+            <text class="info-from">来源：{{doc.source}}</text>
+          </view>
+        </view>
+        <view class="">
+          <view class="top-btn-group">
+            <button size="mini" class="btn" type="warn" bindtap="go_menu" data-id="{{doc.id}}">阅读文档</button>
+            <button size="mini" class="btn" disabled="{{is_add}}" bindtap="add_my_doc" data-id="{{doc.id}}">{{add_text}}</button>
+            <button size="mini" class="btn" open-type="share">分享文档</button>
+          </view>
+        </view>
       </view>
     </view>
-    <view class="">
-      <view class="top-btn-group">
-        <button size="mini" class="btn" type="warn" bindtap="go_menu" data-id="{{data.id}}">阅读文档</button>
-        <button size="mini" class="btn" disabled="{{is_add}}" bindtap="add_my_doc" data-id="{{data.id}}">{{add_text}}</button>
-        <button size="mini" class="btn" open-type="share">分享文档</button>
-      </view>
+    <view class="desc-main">
+      <view class="border-b"></view>
+      <view class="top-info-desc">{{doc.desc}}</view>
     </view>
-    <view class="top-info-desc">{{data.desc}}</view>
-    <view class="top-menu" bindtap="go_menu" data-id="{{data.id}}" wx:if="{{false}}">
-      <text class="menu-name border-b">目录</text>
-      <text class="menu-info"> ></text>
+
+
+    <view class="zan-main">
+      <view class="zan-top">
+        <text class="text-16" style="color:#333333;">点赞</text>
+        <view class="icon-btn" data-type="doc" data-id="{{doc.id}}" catchtap="doc_like">
+          <text class="c-iconfont text-30 icon-aui-icon-laud"></text>
+          <text class="text-12">{{doc.like_count}}</text>
+        </view>
+
+      </view>
+      <view class="zan-body" wx:if="{{doc.likes.length>0}}">
+        <scroll-view class="zan-user-list-sv" scroll-x="true">
+          <view class="zan-user-list">
+            <view class="user-info" wx:for="{{doc.likes}}" wx:key="{{item}}">
+              <image class="user-avatar" src="{{item.avatar}}"></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="text-12 zan-empty" wx:else>随手一赞，带你去浪</view>
+    </view>
+
+    <navigator url="../wenda-post/wenda-post?source=doc&source_id={{doc.id}}" class="iconfont ask-btn" bindtap="goAsk">提问</navigator>
+  </view>
+  <view class="zan-main">
+    <view class="zan-top">
+      <text class="text-16" style="color:#333333;">问答</text>
+      <view class="icon-btn">
+        <text class="text-12">{{data.total}}个问题</text>
+      </view>
     </view>
   </view>
-</view>
+  <block wx:for="{{data.data}}" wx:key="{{item}}">
+    <navigator url="../wenda-page/wenda-page?id={{item.id}}" class="q-item">
+      <view class="q-left">
+        <view class="q-status">
+          <view class="answer-num">{{item.reply_count}}</view>
+          <view>回答</view>
+        </view>
+      </view>
+      <view class="q-right">
+        <view class="q-info">
+          <view class="q-man">
+            <image src="{{item.user.avatar}}" class="q-avatar"></image>
+            <view class="q-asker">
+              <text class="name">{{item.user.name}}</text>
+              <text class="title">{{item.user.title}}</text>
+            </view>
+          </view>
+          <view class="q-time">{{item.created}}</view>
+        </view>
+        <view class="q-title" bindtap="goDetail">{{item.title}}</view>
+        <view class="q-tags" wx:if="{{false}}">
+          <view class="q-tag">linux</view>
+          <view class="q-tag">javascript</view>
+          <view class="q-tag">nginx</view>
+        </view>
+        <view class="pic-grid" wx:if="{{item.pics_arr.length>0}}">
+          <block wx:if="{{item.pics_type==3}}">
+            <image src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic3"></image>
+          </block>
+          <block wx:if="{{item.pics_type==2}}">
+            <image src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic2"></image>
+          </block>
+          <block wx:if="{{item.pics_type==1}}">
+            <image mode="widthFix" src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic1"></image>
+          </block>
+        </view>
+        <view class="from-line">
+          <view class="from-left">
+            <block wx:if="{{item.source_info.title}}">来自：<text class="">{{item.source_info.title}}</text></block>
+          </view>
+          <view class="from-right">
+            <view class="from-right-item" wx:if="{{false}}">
+              <view class="iconfont icon-huida"></view>
+              <text>523</text>
+            </view>
+            <view class="from-right-item" wx:if="{{false}}">
+              <view class="iconfont icon-shoucang"></view>
+              <text>523</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="border-b"></view>
+  </block>
+  <view class="no_more" wx:if="{{more}}">{{more_data}}</view>
+  <view class="no_more" wx:if="{{no_more}}">{{more_data}}</view>
+  <view class="no_data view-bg" wx:if="{{no_data}}">
+    <view class="no_data_text">暂无问答</view>
+  </view>
+</block>

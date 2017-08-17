@@ -1,0 +1,153 @@
+@import '/assets/style/iconfont.wxss';
+
+.ask {
+  padding: 0rpx;
+  background: #fff;
+}
+
+.ask-title {
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.ask-tag {
+  font-size: 24rpx;
+  padding: 20rpx;
+}
+
+.ask-area {
+  margin-bottom: 20rpx;
+}
+
+.ask-textarea {
+  line-height: 1.5;
+  font-size: 28rpx;
+  padding: 20rpx;
+  min-height: 300rpx;
+  margin-bottom: 10rpx;
+  width: 708rpx;
+}
+
+.add-pic-btn {
+  font-size: 40rpx;
+  border: 1rpx #e5e7e9 solid;
+  padding: 22rpx;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  color: #aaa;
+  text-align: center;
+  float: left;
+}
+
+.pics {
+  display: flex;
+  padding: 20rpx 0 0 20rpx;
+  flex-wrap: wrap;
+}
+
+.add-pic {
+  width: 162rpx;
+  height: 162rpx;
+  vertical-align: bottom;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.pics-tip {
+  font-size: 24rpx;
+  color: #999;
+  padding: 20rpx;
+}
+
+.add-pic-img {
+  width: 162rpx;
+  height: 162rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+
+.progress {
+  width: 162rpx;
+  height: 162rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
+}
+.progress icon{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 50%;
+  left: 50%;
+  margin-left: -20rpx;
+  margin-top: -20rpx;
+}
+
+.progress progress {
+  position: absolute;
+  width: 162rpx;
+  bottom: 0;
+  left: 0;
+}
+
+.delete-icon {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  font-size: 30rpx;
+  color: #bbb;
+}
+
+.post-line {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 30rpx;
+  z-index: 999;
+  background: #fff;
+}
+
+.post-btn {
+  width: 690rpx;
+}
+
+.empty-bottom {
+  height: 200rpx;
+}
+
+.tag-head {
+  float: left;
+  margin-right: 30rpx;
+  color: #aaa;
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+
+/*标签*/
+
+.pick-tags {
+  padding-top: 20rpx;
+  clear: both;
+  margin-bottom: 20rpx;
+}
+
+.pick-tag {
+  font-size: 28rpx;
+  color: #666;
+  border: 1px #e1ecf4 solid;
+  float: left;
+  margin-right: 26rpx;
+  padding: 10rpx 30rpx;
+  position: relative;
+}
+
+.pick-tag.tip {
+  color: #666;
+  border: 1px #e1ecf4 solid;
+}

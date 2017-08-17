@@ -1,0 +1,48 @@
+<view class="ask">
+  <input placeholder="标题：一句话说清问题" class="ask-title" confirm-type="next" bindinput="bind_title" />
+  <view class="border-b"></view>
+  <view class="ask-area">
+    <textarea placeholder='描述你的问题' class="ask-textarea" maxlength="-1" auto-height="true"  bindinput="bind_desc" />
+    <view class="pics">
+      <view class="add-pic" wx:for="{{pics_array}}" wx:for-index="idx" wx:key="{{item}}">
+        <image src="{{item.path}}" data-src="{{item.path}}" class="add-pic-img" mode="aspectFill" bindtouchstart="mytouchstart" bindtouchend="mytouchend" catchtap="toDetail"></image>
+        <view class="iconfont icon-guanbi delete-icon" wx:if="{{false}}"></view>
+        <view class="progress" wx:if="{{item.upload}}">
+        <icon wx:if="{{item.progress>=100}}" type="success" size="20" color="#ffffff"/>
+        <progress stroke-width="3" percent="{{item.progress}}" color="#E64340" />
+        </view>
+      </view>
+
+      <view hover-class="view-hover-class" class="iconfont icon-jia add-pic-btn" wx:if="{{pics_array.length<9 && !is_load}}" bindtap="add_pic"></view>
+    </view>
+    <view class="pics-tip" wx:if="{{pics_array.length>0}}">长按图片删除，最多能添加9张图片</view>
+    <view class="clear"></view>
+  </view>
+
+  <view class="pick-tags" wx:if="{{false}}">
+    <view class="iconfont icon-biaoqian tag-head"></view>
+    <view class="pick-tag">php
+      <view class="iconfont icon-guanbi delete-icon"></view>
+    </view>
+    <view class="pick-tag">linux
+      <view class="iconfont icon-guanbi delete-icon"></view>
+    </view>
+    <view class="clear"></view>
+  </view>
+
+  <input placeholder="标签" class="ask-tag" wx:if="{{false}}" />
+
+  <view class="pick-tags" wx:if="{{false}}">
+    <view class="pick-tag tip">javascript</view>
+    <view class="pick-tag tip">json</view>
+    <view class="pick-tag tip">jquery</view>
+    <view class="clear"></view>
+  </view>
+
+</view>
+<view class="empty-bottom"></view>
+
+
+<view class="post-line">
+  <button bindtap="wenda_post" type='warn' class="post-btn" disabled="{{disabled}}" loading="{{disabled && is_load}}">发布问题</button>
+</view>

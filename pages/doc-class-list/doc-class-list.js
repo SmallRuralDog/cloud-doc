@@ -6,6 +6,8 @@ Page({
    */
   data: {
     data: {},
+    doc_list:[],
+    tag_id:0,
     page: 1,
     class_id: 0,
     more_data: "加载更多中..",
@@ -33,7 +35,7 @@ Page({
       is_load: true
     })
     wx.request({
-      url: getApp().api.get_v2_class_doc,
+      url: getApp().api.get_v3_class_doc,
       data: {
         page: this.data.page,
         class_id: this.data.class_id
@@ -41,7 +43,8 @@ Page({
       success: (res) => {
         if (res.data.current_page == 1) {
           this.setData({
-            data: res.data
+            data: res.data,
+            doc_list: res.data.doc_list
           })
         } else {
           let o_data = this.data.data;
@@ -68,6 +71,12 @@ Page({
 
     wx.navigateTo({
       url: '../doc-info/doc-info?doc_id=' + id
+    })
+  },
+  go_page: function (event) {
+    let id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../article-page/article-page?id=' + id
     })
   },
   /**

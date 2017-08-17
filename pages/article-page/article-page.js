@@ -1,7 +1,7 @@
 Page({
   data: {
     id: 0,
-    title:'',
+    title: '',
     article: {},
     read_type: 'light',
     can_type: wx.canIUse('setNavigationBarColor')
@@ -32,7 +32,7 @@ Page({
           this.set_nav_type(this.data.read_type)
           this.setData({
             article: data,
-            title:res.data.data.title
+            title: res.data.data.title
           });
           wx.setNavigationBarTitle({
             title: res.data.data.title,
@@ -105,5 +105,12 @@ Page({
     return {
       title: this.data.title
     }
+  },
+  previewImage: function (event) {
+    let src = event.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    })
   }
 })

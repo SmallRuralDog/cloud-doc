@@ -41,7 +41,7 @@
                         </block>
                     </slider>
             
-                    <scroll-view wx:if="{{item.node === 'element' && item.tag === 'scroll-view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" >
+                    <scroll-view scroll-x="true" wx:if="{{item.node === 'element' && item.tag === 'scroll-view'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" >
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m1" data="{{item}}"/>
                         </block>
@@ -155,7 +155,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m1" data="{{item}}"/>
                         </block>
@@ -335,7 +335,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m2" data="{{item}}"/>
                         </block>
@@ -515,7 +515,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m3" data="{{item}}"/>
                         </block>
@@ -695,7 +695,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m4" data="{{item}}"/>
                         </block>
@@ -875,7 +875,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m5" data="{{item}}"/>
                         </block>
@@ -1055,7 +1055,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m6" data="{{item}}"/>
                         </block>
@@ -1235,7 +1235,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m7" data="{{item}}"/>
                         </block>
@@ -1415,7 +1415,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m8" data="{{item}}"/>
                         </block>
@@ -1595,7 +1595,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m9" data="{{item}}"/>
                         </block>
@@ -1775,7 +1775,7 @@
                         </block>
                     </audio>
             
-                    <image wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
+                    <image bindtap="previewImage" data-src="{{item.attr.src}}" wx:if="{{item.node === 'element' && item.tag === 'image'}}" class="{{item.attr.className}}"width="{{item.attr.width}}"height="{{item.attr.height}}"data="{{item.attr.data}}"src="{{item.attr.src}}"id="{{item.attr.id}}"style="{{item.attr.style}}" mode="widthFix">
                         <block wx:for="{{item.child}}" wx:key="{{item}}">
                             <template is="m9" data="{{item}}"/>
                         </block>

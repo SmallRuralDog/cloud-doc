@@ -39,7 +39,7 @@
 .doc-list-pic {
   width: 225rpx;
   height: 300rpx;
-  border-radius: 8rpx;
+  border-radius: 4rpx;
 }
 .pic-x-view{
   width: 225rpx;
