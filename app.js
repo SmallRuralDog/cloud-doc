@@ -59,7 +59,7 @@ App({
     get_v3_index: HOST + "/api/v3/index",
 
     get_v3_2_doc_info: HOST + "/api/v3/doc-info-2",
-
+    get_v3_doc_page: HOST + "/api/v3/doc-page",
     get_v3_article_index: HOST + "/api/v3/article-index",
     get_v3_article_page: HOST + "/api/v3/article-page",
     get_v3_class_doc: HOST + "/api/v3/class-list",

@@ -85,13 +85,13 @@
         </view>
         <view class="pic-grid" wx:if="{{item.pics_arr.length>0}}">
           <block wx:if="{{item.pics_type==3}}">
-            <image src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic3"></image>
+            <image mode="aspectFill" src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic3"></image>
           </block>
           <block wx:if="{{item.pics_type==2}}">
-            <image src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic2"></image>
+            <image mode="aspectFill" src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic2"></image>
           </block>
           <block wx:if="{{item.pics_type==1}}">
-            <image mode="widthFix" src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic1"></image>
+            <image mode="aspectFill" mode="widthFix" src="{{item.thumb}}" wx:for="{{item.pics_arr}}" wx:key="{{item}}" class="pic1"></image>
           </block>
         </view>
         <view class="from-line">

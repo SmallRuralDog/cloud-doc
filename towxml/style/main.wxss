@@ -1,8 +1,7 @@
 .h2w {
-  font-size:28rpx;
+
   line-height: 1.8;
   word-wrap: break-word;
-  word-wrap:break-word;
   word-break:break-all;
 }
 .h2w__main {
@@ -23,29 +22,29 @@
 .h2w__h1 {
     border-bottom-style:double;
     border-bottom-width:6rpx;
-    font-size:42rpx;
+    font-size:150%;
     padding-bottom:10rpx;
     margin-bottom:20rpx;
 }
 .h2w__h2 {
     border-bottom-style:solid;
     border-bottom-width:1rpx;
-    font-size:40rpx;
+    font-size:140%;
     padding-bottom:8rpx;
     margin-bottom:18rpx;
 }
 .h2w__h3 {
-    font-size:38rpx;
+    font-size:135%;
     padding-bottom:6rpx;
     margin-bottom:12rpx;
 }
 .h2w__h4 {
-    font-size:36rpx;
+    font-size:130%;
     padding-bottom:4rpx;
     margin-bottom:12rpx;
 }
 .h2w__h5 {
-    font-size:34rpx;
+    font-size:125%;
     padding-bottom:2rpx;
     margin-bottom:12rpx;
 }
@@ -87,7 +86,7 @@
 .h2w__th,
 .h2w__td {
     padding:8rpx 16rpx;
-    font-size:24rpx;
+    font-size:85%;
     border-width:1rpx;
     border-style:solid;
     display:table-cell;
@@ -100,7 +99,7 @@
 /**代码块**/
 .h2w__pre {
     padding:20rpx;
-    font-size:24rpx;
+    font-size:85%;
     word-break:normal;
     white-space:pre;
     width: 710rpx;
@@ -113,7 +112,7 @@
 .h2w__pre .h2w__code {
     padding:0;
     border:0;
-    font-size:22rpx;
+    font-size:78%;
     display: inline-block;
 }
 .h2w__pre,

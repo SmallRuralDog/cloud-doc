@@ -1,13 +1,120 @@
-<import src="/towxml/entry.wxml"/>
+<import src="/towxml/entry.wxml" />
 <view class="">
-  <view class="page-main">
-    <view class="page-content markdown-body content">
-      <template is="entry" data="{{...article}}"/>
+  <view class="page-main" catchtap="main_click">
+    <view class="page-content markdown-body content" style="font-size:{{font_size}}rpx;">
+      <template is="entry" data="{{...article}}" />
     </view>
   </view>
-  <view class="page-footer"></view>
-  <view wx:if="{{can_type}}" class="set-read-type" bindtap="change_read_type">
-    <image class="set-read-type-icon" src="../../assets/images/ic_yjms.png"></image>
+  <view class="page-footer">
+
+
+    <view class="set-font" wx:if="{{show_set_font}}">
+      <view class="set-f-l">
+        <text class="c-iconfont icon-zitijian"></text>
+      </view>
+      <view class="set-f-body">
+        <slider bindchange="sliderchange" min="20" max="60" value="{{font_size}}" selected-color="#ed424b" />
+      </view>
+      <view class="set-f-r">
+        <text class="c-iconfont icon-zitijia"></text>
+      </view>
+    </view>
+    <view class="footer-bar">
+      <view class="bar-item" catchtap="show_menu">
+        <text class="c-iconfont icon-mulu"></text>
+        <text>目录</text>
+      </view>
+      <view class="bar-item" catchtap="set_font">
+        <text class="c-iconfont icon-icon-yxj-font"></text>
+        <text>设置</text>
+      </view>
+      <view class="bar-item" bindtap="change_read_type">
+        <block wx:if="{{read_type=='light'}}">
+          <text class="c-iconfont icon-yejian"></text>
+          <text>夜间</text>
+        </block>
+        <block wx:else>
+          <text class="c-iconfont icon-day"></text>
+          <text>日间</text>
+        </block>
+      </view>
+      <navigator class="bar-item" url="../wenda-post/wenda-post?source=doc-page&source_id={{page_id}}">
+        <text class="c-iconfont icon-tiwen"></text>
+        <text>提问</text>
+      </navigator>
+    </view>
+
+
+
+
+    <scroll-view scroll-y="true" class="page-menu" wx:if="{{show_menu}}" scroll-into-view="menu-{{info.id}}">
+      <view class="">
+        <view class="menu-list">
+          <view class="menu-item" wx:for="{{menu}}" wx:key="{{item}}">
+            <view hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+              <text id="menu-{{item.id}}" decode="true" class="menu-title border-b-s " data-id="{{item.id}}" bindtap="go_page">{{item.title}}</text>
+            </view>
+
+            <!--2-->
+            <view class="item-son">
+              <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                <view class="" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                  <text id="menu-{{item.id}}" decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title ">{{item.menu_title}}</text>
+                </view>
+                <!--3-->
+                <view class="item-son-2">
+                  <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                    <view class="" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                      <text id="menu-{{item.id}}" decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-2 ">{{item.menu_title}}</text>
+                    </view>
+                    <!--4-->
+                    <view class="item-son-3">
+                      <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                        <view class="" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                          <text id="menu-{{item.id}}" decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-3 ">{{item.menu_title}}</text>
+                        </view>
+                        <!--5-->
+                        <view class="item-son-4">
+                          <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                            <view id="menu-{{item.id}}" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                              <text decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-4 ">{{item.menu_title}}</text>
+                            </view>
+                            <!--6-->
+                            <view class="item-son-5">
+                              <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                                <view class="" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                                  <text id="menu-{{item.id}}" decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-5 ">{{item.menu_title}}</text>
+                                </view>
+                                <!--7-->
+                                <view class="item-son-6">
+                                  <view class="" wx:for="{{item.children}}" wx:key="{{item}}">
+                                    <view class="" hover-class="view-hover-class" class="{{item.id==page_id?'select':''}}">
+                                      <text id="menu-{{item.id}}" decode="true" data-id="{{item.id}}" bindtap="go_page" class="menu-title border-b-s son-title-6 ">{{item.menu_title}}</text>
+                                    </view>
+                                    <template is="menu_son" data="{{...item}}" />
+                                  </view>
+                                </view>
+                                <!--7-->
+                              </view>
+                            </view>
+                            <!--6-->
+                          </view>
+                        </view>
+                        <!--5-->
+                      </view>
+                    </view>
+                    <!--4-->
+                  </view>
+                </view>
+                <!--3-->
+              </view>
+            </view>
+            <!--2-->
+
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
   </view>
-  <navigator url="../wenda-post/wenda-post?source=doc-page&source_id={{page_id}}" class="iconfont ask-btn">提问</navigator>
 </view>

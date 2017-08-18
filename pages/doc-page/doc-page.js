@@ -7,15 +7,18 @@ Page({
   data: {
     page_id: {},
     article: {},
+    info: [],
     read_type: 'light',
-    can_type: wx.canIUse('setNavigationBarColor')
+    can_type: wx.canIUse('setNavigationBarColor'),
+    font_size: 28,
+    show_set_font: false,
+    show_menu: false,
+    menu: []
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
-
-
     let id = option.page_id
     this.setData({
       page_id: id
@@ -26,6 +29,27 @@ Page({
         read_type: s_type
       })
     }
+
+    wx.getStorage({
+      key: 'font_size',
+      success: res => {
+        this.setData({
+          font_size: res.data
+        })
+      },
+    })
+
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.get_data()
+  },
+  go_page: function (event) {
+    let page_id = event.currentTarget.dataset.id;
+    this.setData({
+      show_menu: false,
+      page_id: page_id
+    });
     wx.showLoading({
       title: '加载中',
     })
@@ -46,13 +70,16 @@ Page({
           data.theme = this.data.read_type;
           this.set_nav_type(this.data.read_type)
           this.setData({
-            article: data
+            article: data,
+            info: res.data.data
           });
           wx.setNavigationBarTitle({
             title: res.data.data.doc_title + '-' + res.data.data.title,
           })
-
           wx.hideLoading()
+          if (this.data.menu.length <= 0) {
+            this.get_menu()
+          }
         } catch (error) {
           console.log(error)
           wx.hideLoading()
@@ -79,6 +106,9 @@ Page({
   },
   change_read_type() {
     if (!this.data.can_type) {
+      wx.showModal({
+        content: '您当前微信版本不支持切换，请升级最新版！'
+      })
       return;
     }
 
@@ -91,7 +121,8 @@ Page({
     this.set_nav_type(data.theme)
     wx.setStorageSync('read_type', data.theme)
     this.setData({
-      article: data
+      article: data,
+      read_type: data.theme
     })
   },
   set_nav_type(t) {
@@ -115,50 +146,14 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   },
@@ -167,6 +162,52 @@ Page({
     wx.previewImage({
       current: src,
       urls: [src]
+    })
+  },
+  sliderchange(event) {
+    let value = event.detail.value
+
+    wx.setStorageSync('font_size', value)
+
+    this.setData({
+      font_size: value
+    })
+  },
+  main_click() {
+    this.setData({
+      show_set_font: false,
+      show_menu: false,
+    })
+  },
+  set_font() {
+    this.setData({
+      show_set_font: !this.data.show_set_font
+    })
+  },
+  show_menu() {
+    if (this.data.menu.length <= 0) {
+      this.get_menu()
+    }
+    this.setData({
+      show_menu: !this.data.show_menu
+    })
+  },
+  get_menu() {
+    wx.request({
+      url: getApp().api.get_v3_doc_page,
+      data: {
+        doc_id: this.data.info.doc_id,
+        page_id:this.data.page_id
+      },
+      success: (res) => {
+        this.setData({
+          menu: res.data.data
+        })
+        wx.stopPullDownRefresh()
+      },
+      complete: () => {
+        wx.hideLoading();
+      }
     })
   }
 })
