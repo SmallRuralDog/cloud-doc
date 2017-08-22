@@ -1,6 +1,7 @@
 
 # 云档
-![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2.1.8-red.svg)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2.1.8-red.svg)![](https://img.shields.io/badge/%E6%9B%B4%E6%96%B0%E6%97%A5%E6%9C%9F-2017.08.18-blue.svg)
+
 一个免费在线文档的微信小程序
 
  ![](http://otbx7z2z0.bkt.clouddn.com/cloud-doc-logo.jpg_120x120.jpg)
