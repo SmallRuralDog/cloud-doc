@@ -60,9 +60,13 @@ App({
 
     get_v3_2_doc_info: HOST + "/api/v3/doc-info-2",
     get_v3_doc_page: HOST + "/api/v3/doc-page",
+
+    v3_doc_back: HOST +"/api/v3/doc-back",//文档反馈
+
+    get_v3_doc_page_menu: HOST + "/api/v3/doc-page-menu",
     get_v3_article_index: HOST + "/api/v3/article-index",
     get_v3_article_page: HOST + "/api/v3/article-page",
-    get_v3_class_doc: HOST + "/api/v3/class-list",
+    get_v3_class_doc: HOST + "/api/v3/class-list-2",
     get_v3_user_index: HOST + "/api/v3/user-index",
     v3_user_follow: HOST + "/api/v3/user-follow",
     v3_user_like: HOST + "/api/v3/user-like",

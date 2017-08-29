@@ -14,7 +14,8 @@
     "pages/user/user",
     "pages/wenda-page/wenda-page",
     "pages/wenda-post/wenda-post",
-    "pages/wenda-reply-post/wenda-reply-post"
+    "pages/wenda-reply-post/wenda-reply-post",
+    "pages/doc-back/doc-back"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +41,6 @@
         "iconPath": "/assets/images/feedback.png",
         "selectedIconPath": "/assets/images/feedback_fill.png"
       },
-
       {
         "pagePath": "pages/doc-class/doc-class",
         "text": "课程",

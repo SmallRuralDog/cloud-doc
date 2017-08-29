@@ -44,12 +44,13 @@
     </view>
     <view class="item-doc" wx:if="{{wenda.source_info.title}}">
       <image class="item-doc-avatar" src="{{wenda.source_info.h_cover_url}}" mode="aspectFill"></image>
-      <view class="item-doc-info">
+      <navigator url="../doc-info/doc-info?doc_id={{wenda.source_info.id}}" hover-class="none" class="item-doc-info">
         <text class="doc-title">{{wenda.source_info.title}}</text>
         <text class="doc-desc">{{wenda.source_info.desc}}</text>
-      </view>
+      </navigator>
       <view class="doc-btn">
-        <navigator url="../doc-info/doc-info?doc_id={{wenda.source_info.id}}" class="mini-btn">查看</navigator>
+        <navigator wx:if="{{wenda.source_info.page_id<=0}}" url="../doc-info/doc-info?doc_id={{wenda.source_info.id}}" class="mini-btn">查看</navigator>
+        <navigator wx:else url="../doc-page/doc-page?page_id={{wenda.source_info.page_id}}" class="mini-btn">查看</navigator>
       </view>
     </view>
     <view class="answer-line">

@@ -28,9 +28,16 @@
   padding: 0;
   border-bottom: 10rpx solid #f7f7f7;
 }
-.class-title{
-  padding: 30rpx;
+.class-title {
+  text-align: center;
+  line-height: 90rpx;
+  height: 90rpx;
+  padding: 0 30rpx;
   font-size: 32rpx;
+  color: #666;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
 }
 .class-son{
   display: flex;

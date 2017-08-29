@@ -5,9 +5,10 @@
   </view>
   <view class="class-main">
     <view class="class-list view-bg" wx:for="{{data}}" wx:key="{{item}}">
-      <view class="class-title">
+      <navigator class="class-title" url="../doc-class-list/doc-class-list?class_id={{item.id}}">
         <text>{{item.title}}</text>
-      </view>
+        <text class="c-iconfont icon-aui-icon-more"></text>
+      </navigator>
       <view class="class-son">
         <view class="class-son-item" wx:for="{{item.son}}" wx:key="{{item}}" hover-class="view-hover-class" data-id="{{item.id}}" bindtap="go_class_list">
           <image class="class-icon" src="{{item.icon_url}}"></image>

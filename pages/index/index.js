@@ -32,6 +32,10 @@ Page({
       title: '加载中',
     })
     this.get_data()
+
+    /*wx.navigateTo({
+      url: '../doc-page/doc-page?page_id=8540'
+    })*/
   },
   get_data() {
     this.setData({

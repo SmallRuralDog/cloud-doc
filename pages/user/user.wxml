@@ -64,40 +64,67 @@
 </view> -->
 
   <view class="user-tab">
-    <view class="tab-item active">
+    <view class="tab-item {{show_tab==1?'active':''}}" catchtap="set_tab" data-type="1">
       <text>档库</text>
     </view>
-    <view class="tab-item">
-      <text>收藏<text class="text-8">（即将开放）</text></text>
+    <view class="tab-item {{show_tab==0?'active':''}}" catchtap="set_tab" data-type="0">
+      <text>收藏</text>
     </view>
   </view>
 
-  <view class="empty" wx:if="{{user_data.doc.length<=0}}">
-    <view class="text-12"><text wx:if="{{is_login}}">没添加过任何文档</text><text wx:else>登录后查看我的文档</text></view>
-    <navigator url="/pages/index/index" open-type="switchTab">
-      <button class="start-btn" type="default" size="mini" wx:if="{{is_login}}">开始学习</button>
-    </navigator>
-  </view>
-  <view class="" wx:else>
+  <block wx:if="{{show_tab==1}}">
+    <view class="empty" wx:if="{{user_data.doc.length<=0}}">
+      <view class="text-12"><text wx:if="{{is_login}}">没添加过任何文档</text><text wx:else>登录后查看我的文档</text></view>
+      <navigator url="/pages/index/index" open-type="switchTab">
+        <button class="start-btn" type="default" size="mini" wx:if="{{is_login}}">开始学习</button>
+      </navigator>
+    </view>
+    <view class="" wx:else>
 
-    <view class="doc-list">
-      <view class="doc-list-item" wx:for="{{user_data.doc}}" wx:key="item">
-        <view class="pic-view">
-          <navigator url="/pages/doc-info/doc-info?doc_id={{item.id}}">
-            <image data-id="{{item.id}}" class="doc-list-pic" src="{{item.cover_url}}"></image>
-          </navigator>
-          <view class="pic-x-view" wx:if="{{edit_show}}">
-            <button data-id="{{item.id}}" bindtap="del_my_doc" size="mini" plain="true" type="warn">删除</button>
+      <view class="doc-list">
+        <view class="doc-list-item" wx:for="{{user_data.doc}}" wx:key="item">
+          <view class="pic-view">
+            <navigator url="/pages/doc-info/doc-info?doc_id={{item.id}}">
+              <image data-id="{{item.id}}" class="doc-list-pic" src="{{item.cover_url}}"></image>
+            </navigator>
+            <view class="pic-x-view" wx:if="{{edit_show}}">
+              <button data-id="{{item.id}}" bindtap="del_my_doc" size="mini" plain="true" type="warn">删除</button>
+            </view>
           </view>
+          <text data-id="{{item.id}}" class="doc-list-title">{{item.title}}</text>
         </view>
-        <text data-id="{{item.id}}" class="doc-list-title">{{item.title}}</text>
+      </view>
+      <view class="top-info">
+        <text>共{{user_data.doc.length}}个文档</text>
+        <text bindtap="edit_show">编辑</text>
       </view>
     </view>
-    <view class="top-info">
-      <text>共{{user_data.doc.length}}个文档</text>
-      <text bindtap="edit_show">编辑</text>
+  </block>
+
+  <block wx:if="{{show_tab==0}}">
+    <view class="empty" wx:if="{{user_data.doc_page.length<=0}}">
+      <view class="text-12"><text wx:if="{{is_login}}">没收藏过任何文档</text><text wx:else>登录后查看我的收藏</text></view>
+      <navigator url="/pages/index/index" open-type="switchTab">
+        <button class="start-btn" type="default" size="mini" wx:if="{{is_login}}">开始学习</button>
+      </navigator>
     </view>
-  </view>
+    <view class="" wx:else>
+      <block wx:for="{{user_data.doc_page}}" wx:key="{{item}}">
+        <view class="item-doc" wx:if="{{item.title}}">
+          <image class="item-doc-avatar" src="{{item.doc.h_cover_url}}" mode="aspectFill"></image>
+          <navigator url="../doc-page/doc-page?page_id={{item.id}}" hover-class="none" class="item-doc-info">
+            <text class="doc-title">{{item.title}}</text>
+            <text class="doc-desc">{{item.doc.title}}</text>
+          </navigator>
+          <view class="doc-btn">
+            <view class="mini-btn" data-id="{{item.id}}" bindtap="un_collect">删除</view>
+          </view>
+        </view>
+        <view class="border-b"></view>
+      </block>
+    </view>
+  </block>
+
   <!-- <view class="func-grid3">
   <view class="func-item3">
     <view class="iconfont icon-shoucang"></view>

@@ -14,6 +14,7 @@ page {
 .menu-title {
   padding-left: 20rpx;
   font-size: 28rpx;
+  height: 90rpx;
   line-height: 90rpx;
   color: #444;
   display: block;

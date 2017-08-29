@@ -6,7 +6,6 @@ Page({
    */
   data: {
     data: {},
-    doc_list:[],
     tag_id:0,
     page: 1,
     class_id: 0,
@@ -44,7 +43,6 @@ Page({
         if (res.data.current_page == 1) {
           this.setData({
             data: res.data,
-            doc_list: res.data.doc_list
           })
         } else {
           let o_data = this.data.data;

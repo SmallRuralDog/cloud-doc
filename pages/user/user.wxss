@@ -162,3 +162,48 @@ page{
   font-size: 18pt;
   margin-bottom: 20rpx;
 } */
+.item-doc {
+  display: flex;
+  align-items: stretch;
+  padding: 20rpx;
+  background: #ffffff;
+}
+
+.item-doc-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.item-doc-info {
+  width: 500rpx;
+  padding: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doc-title {
+  font-size: 28rpx;
+  color: #333;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.doc-desc {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.doc-btn {
+  width: 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

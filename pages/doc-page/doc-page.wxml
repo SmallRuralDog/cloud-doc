@@ -1,5 +1,6 @@
 <import src="/towxml/entry.wxml" />
 <view class="">
+  <view class="pbg {{read_type}}"></view>
   <view class="page-main" catchtap="main_click">
     <view class="page-content markdown-body content" style="font-size:{{font_size}}rpx;">
       <template is="entry" data="{{...article}}" />
@@ -20,9 +21,18 @@
       </view>
     </view>
     <view class="footer-bar">
-      <view class="bar-item" catchtap="show_menu">
-        <text class="c-iconfont icon-mulu"></text>
-        <text>目录</text>
+      <view class="menu-box">
+        <view class="go-btn" catchtap="up_page">
+          <text class="go-icon c-iconfont icon-aui-icon-left"></text>
+        </view>
+        <view class="bar-item" catchtap="show_menu">
+          <text class=" c-iconfont icon-mulu"></text>
+          <text>目录</text>
+        </view>
+        <view class="go-btn" catchtap="next_page">
+          <text class="go-icon c-iconfont icon-aui-icon-right"></text>
+        </view>
+
       </view>
       <view class="bar-item" catchtap="set_font">
         <text class="c-iconfont icon-icon-yxj-font"></text>
@@ -42,12 +52,16 @@
         <text class="c-iconfont icon-tiwen"></text>
         <text>提问</text>
       </navigator>
+      <view class="bar-item" catchtap="show_more">
+        <text class="c-iconfont icon-mingpiandibudaohanggengduo"></text>
+        <text>更多</text>
+      </view>
     </view>
 
 
 
 
-    <scroll-view scroll-y="true" class="page-menu" wx:if="{{show_menu}}" scroll-into-view="menu-{{info.id}}">
+    <scroll-view scroll-y="true" class="page-menu {{read_type}}" wx:if="{{show_menu}}" scroll-into-view="menu-{{info.id}}">
       <view class="">
         <view class="menu-list">
           <view class="menu-item" wx:for="{{menu}}" wx:key="{{item}}">

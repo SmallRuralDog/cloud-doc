@@ -13,20 +13,23 @@ swiper {
   background: #fff;
   margin-bottom: 20rpx;
   display: flex;
+  flex-wrap:wrap; 
 }
 
 .grid-item {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 30rpx 0rpx;
+  flex-shrink: 0;
+  min-width: 20%;
+  padding: 30rpx 0;
   justify-content: center;
   align-items: center;
 }
 
 .grid-icon {
-  width: 70rpx;
-  height: 70rpx;
+  width: 60rpx;
+  height: 60rpx;
   background-color: none;
 }
 
@@ -42,9 +45,14 @@ swiper {
 
 .class-title {
   text-align: center;
-  line-height: 100rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  padding: 0 30rpx;
   font-size: 32rpx;
-  color: #999;
+  color: #666;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
 }
 
 .class-doc-list {

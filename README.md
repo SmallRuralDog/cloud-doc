@@ -1,6 +1,7 @@
 
 # 云档
-![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2.1.8-red.svg) ![](https://img.shields.io/badge/%E6%9B%B4%E6%96%B0%E6%97%A5%E6%9C%9F-2017.08.18-blue.svg)
+![](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-2.2.0-red.svg)
+![](https://img.shields.io/badge/%E6%9B%B4%E6%96%B0%E6%97%A5%E6%9C%9F-2017.08.29-blue.svg)
 
 一个免费在线文档的微信小程序
 
@@ -21,6 +22,10 @@
  ![](http://otbx7z2z0.bkt.clouddn.com/gh_52a837af05b4_860.jpg!300w)
 
 ### 更新日志
+- 2.2.0（2017-08-29）
+    - 修复文档阅读页面，加入收藏，举报，报错功能
+    - 首页加入分类进入入口
+    - 个人中心收藏列表
 - 2.1.8（2017-08-18）
     - 优化文档阅读页面，加入字体设置和目录
     - 优化问答图片显示模型
